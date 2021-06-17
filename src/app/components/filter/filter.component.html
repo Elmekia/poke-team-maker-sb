@@ -1,0 +1,7 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Choose a pokemon</mat-label>
+    <input matInput placeholder="Ex. Pikachu" [(ngModel)]="inputValue"  [ngModelOptions]="{standalone: true}">
+    <mat-icon (click)= "find()" matSuffix class="cursor-pointer" >search</mat-icon>
+  </mat-form-field>
+</form>

@@ -1,0 +1,20 @@
+<app-header></app-header>
+<div class="container">
+  <mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile  [colspan]="1" [rowspan]="1">
+      <app-filter (pokemonEmitter)="findPokemon($event)"></app-filter>
+    </mat-grid-tile>
+    <mat-grid-tile  [colspan]="2" [rowspan]="1">
+    </mat-grid-tile>
+    <mat-grid-tile  [colspan]="1" [rowspan]="2">
+    </mat-grid-tile>
+    <mat-grid-tile  [colspan]="1" [rowspan]="5" class="pokedex">
+      <div *ngIf="showCard">
+        <app-pokemon-card [pokemon]= "pokemon"></app-pokemon-card>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile  [colspan]="2" [rowspan]="1">
+      Aca podría ir eso de armar tu team y exportarlo
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
