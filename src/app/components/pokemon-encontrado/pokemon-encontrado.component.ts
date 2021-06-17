@@ -1,5 +1,11 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { Pokemon } from 'src/app/models/pokemon.model';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges
+} from '@angular/core';
+import { Pokemon } from '../../models/pokemon.model';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -7,23 +13,20 @@ import { Pokemon } from 'src/app/models/pokemon.model';
   styleUrls: ['./pokemon-encontrado.component.scss']
 })
 export class PokemonEncontradoComponent implements OnInit {
-
   @Input()
-  pokemon !: Pokemon;
+  pokemon!: Pokemon;
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit(): void {
     console.log(this.pokemon);
   }
 
   clearPokemon(): void {
-    this.pokemon =  new Pokemon(null);
+    this.pokemon = new Pokemon(null);
   }
 
   catchPokemon(): void {
-    alert("atrapaste un: " + this.pokemon.name);
+    alert('atrapaste un: ' + this.pokemon.name);
   }
-
 }

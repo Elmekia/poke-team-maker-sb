@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
-import { Pokemon } from 'src/app/models/pokemon.model';
-import { PokemonService } from 'src/app/service/pokemon.service';
+import { Pokemon } from '../../models/pokemon.model';
+import { PokemonService } from '../../service/pokemon.service';
 
 @Component({
   selector: 'app-home',
@@ -8,21 +8,23 @@ import { PokemonService } from 'src/app/service/pokemon.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
   pokemon!: Pokemon;
   showCard: boolean = false;
 
-  constructor(private pokemonService: PokemonService) { }
+  constructor(private pokemonService: PokemonService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  findPokemon(pokemon: string){
-    this.pokemonService.getPokemon(pokemon)
+  findPokemon(pokemon: string) {
+    this.pokemonService
+      .getPokemon(pokemon)
       .pipe()
-        .subscribe(poke => {
+      .subscribe(
+        poke => {
           this.pokemon = new Pokemon(poke);
           this.showCard = true;
-        }, err => this.showCard = false);
+        },
+        err => (this.showCard = false)
+      );
   }
 }
