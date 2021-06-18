@@ -5,7 +5,9 @@ import {
   OnInit,
   SimpleChanges
 } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Pokemon } from '../../models/pokemon.model';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -16,7 +18,7 @@ export class PokemonEncontradoComponent implements OnInit {
   @Input()
   pokemon!: Pokemon;
 
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {
     console.log(this.pokemon);
@@ -27,6 +29,8 @@ export class PokemonEncontradoComponent implements OnInit {
   }
 
   catchPokemon(): void {
-    alert('atrapaste un: ' + this.pokemon.name);
+    this.dialog.open(DialogComponent, {
+      data: this.pokemon,
+    });
   }
 }

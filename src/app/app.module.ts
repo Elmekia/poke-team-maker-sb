@@ -16,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { PokemonEncontradoComponent } from './components/pokemon-encontrado/pokemon-encontrado.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 
 
@@ -25,7 +27,8 @@ import {MatButtonModule} from '@angular/material/button';
     HeaderComponent,
     HomeComponent,
     FilterComponent,
-    PokemonEncontradoComponent
+    PokemonEncontradoComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatIconModule,
     HttpClientModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
