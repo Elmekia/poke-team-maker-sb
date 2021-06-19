@@ -18,6 +18,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { PokeTableComponent } from './components/poke-table/poke-table.component';
+import {MatTableModule} from '@angular/material/table';
 
 
 
@@ -28,7 +30,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
     HomeComponent,
     FilterComponent,
     PokemonEncontradoComponent,
-    DialogComponent
+    DialogComponent,
+    PokeTableComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
     HttpClientModule,
     MatCardModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

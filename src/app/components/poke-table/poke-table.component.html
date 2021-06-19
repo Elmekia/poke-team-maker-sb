@@ -1,0 +1,23 @@
+<h3 *ngIf="myPokemonTeam.data.length > 0">Pokemons capturados</h3>
+<table  mat-table [dataSource]="myPokemonTeam" class="mat-elevation-z8" *ngIf="myPokemonTeam.data.length > 0" aria-describedby="Tabla de pokemons capturados">
+  <ng-container matColumnDef="id">
+    <th id="idTable" mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let element"> {{ element.id }} </td>
+  </ng-container>
+  <ng-container matColumnDef="name">
+    <th id="nameTable" mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let poke"> {{poke.name}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="weight">
+    <th id="imgTable" mat-header-cell *matHeaderCellDef> Fotito </th>
+    <td mat-cell *matCellDef="let poke">
+      <img src="{{ poke.img }}" alt="Photo del poke encontrado">
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>

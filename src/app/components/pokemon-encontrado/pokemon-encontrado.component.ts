@@ -1,8 +1,10 @@
 import {
   Component,
+  EventEmitter,
   Input,
   OnChanges,
   OnInit,
+  Output,
   SimpleChanges
 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
@@ -17,6 +19,7 @@ import { DialogComponent } from '../dialog/dialog.component';
 export class PokemonEncontradoComponent implements OnInit {
   @Input()
   pokemon!: Pokemon;
+  @Output() pokemonEmitter = new EventEmitter();
 
   constructor(public dialog: MatDialog) {}
 
@@ -29,8 +32,12 @@ export class PokemonEncontradoComponent implements OnInit {
   }
 
   catchPokemon(): void {
-    this.dialog.open(DialogComponent, {
+   /* this.dialog.open(DialogComponent, {
+      width: '321px',
+      height: '487px',
       data: this.pokemon,
     });
+    */
+   this.pokemonEmitter.emit(this.pokemon);
   }
 }

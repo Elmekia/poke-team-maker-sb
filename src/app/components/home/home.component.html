@@ -10,11 +10,11 @@
     </mat-grid-tile>
     <mat-grid-tile  [colspan]="1" [rowspan]="5" class="pokedex">
       <div *ngIf="showCard">
-        <app-pokemon-card [pokemon]= "pokemon"></app-pokemon-card>
+        <app-pokemon-card [pokemon]= "pokemon" (pokemonEmitter)="catchPokemon($event)"></app-pokemon-card>
       </div>
     </mat-grid-tile>
-    <mat-grid-tile  [colspan]="2" [rowspan]="1">
-      Aca podría ir eso de armar tu team y exportarlo
+    <mat-grid-tile  [colspan]="2" [rowspan]="5">
+      <poke-table [pokemonCatched]= "pokemonCatched" class="poke-table"></poke-table>
     </mat-grid-tile>
   </mat-grid-list>
 </div>

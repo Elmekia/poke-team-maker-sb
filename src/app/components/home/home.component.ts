@@ -9,6 +9,7 @@ import { PokemonService } from '../../service/pokemon.service';
 })
 export class HomeComponent implements OnInit {
   pokemon!: Pokemon;
+  pokemonCatched!: Pokemon;
   showCard: boolean = false;
 
   constructor(private pokemonService: PokemonService) {}
@@ -26,5 +27,10 @@ export class HomeComponent implements OnInit {
         },
         err => (this.showCard = false)
       );
+  }
+
+  catchPokemon(pokemon: Pokemon) : void {
+    this.pokemonCatched = pokemon;
+    this.showCard = false
   }
 }
