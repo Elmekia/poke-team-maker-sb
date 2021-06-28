@@ -10,7 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { FilterComponent } from './components/filter/filter.component';
 import {MatInputModule} from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonEncontradoComponent } from './components/pokemon-encontrado/pokemon-encontrado.component';
@@ -20,6 +20,10 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { PokeTableComponent } from './components/poke-table/poke-table.component';
 import {MatTableModule} from '@angular/material/table';
+import {MatStepperModule} from '@angular/material/stepper';
+import { MailStepperComponent } from './components/mail-stepper/mail-stepper.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import { DragDropComponent } from './components/drag-drop/drag-drop.component';
 
 
 
@@ -31,7 +35,9 @@ import {MatTableModule} from '@angular/material/table';
     FilterComponent,
     PokemonEncontradoComponent,
     DialogComponent,
-    PokeTableComponent
+    PokeTableComponent,
+    MailStepperComponent,
+    DragDropComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +52,10 @@ import {MatTableModule} from '@angular/material/table';
     MatCardModule,
     MatButtonModule,
     MatDialogModule,
-    MatTableModule
+    MatTableModule,
+    MatStepperModule,
+    ReactiveFormsModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
